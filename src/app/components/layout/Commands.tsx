@@ -16,7 +16,7 @@ const Commands = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://217.154.94.16:9544/commands")
+    fetch("/api/bot/commands")
       .then((res) => res.json())
       .then((data) => {
         setCommandsData(data.commands || []);
