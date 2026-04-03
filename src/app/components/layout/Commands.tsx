@@ -2,9 +2,17 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+interface Command {
+  name: string;
+  id: string;
+  description: string;
+  cog: string;
+  type: string;
+}
+
 const Commands = () => {
   const [search, setSearch] = useState("");
-  const [commandsData, setCommandsData] = useState([]);
+  const [commandsData, setCommandsData] = useState<Command[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
